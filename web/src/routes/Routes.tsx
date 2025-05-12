@@ -8,8 +8,8 @@ import {
   ProjectsScreen,
   ContactScreen
 } from '@/screens'
-import { LPLayout } from '@/layouts/LPLayout'
-import { useLP } from '@/contexts/LPProvider'
+import { MainLayout } from '@/layouts/MainLayout'
+import { useMain } from '@/contexts/MainProvider'
 
 const ROUTES = {
   HOME: '/',
@@ -19,7 +19,7 @@ const ROUTES = {
 }
 
 const AppRoutes = () => {
-  const { isAuthenticated } = useLP()
+  const { isAuthenticated } = useMain()
 
   return (
     <BrowserRouter>
@@ -27,7 +27,7 @@ const AppRoutes = () => {
         <Route
           element={
             <PublicRoute isAuthenticated={isAuthenticated}>
-              <LPLayout />
+              <MainLayout />
             </PublicRoute>
           }
         >

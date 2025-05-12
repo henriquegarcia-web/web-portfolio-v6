@@ -24,11 +24,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     border: none;
     outline: none;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     /* font-family: "Montserrat", sans-serif; */
     /* font-family: "Baloo Paaji 2", sans-serif; */
     /* font-family: "Barlow", sans-serif; */
     /* font-family: "Open Sans", sans-serif; */
+    font-family: "Poppins", sans-serif;
     text-decoration: none;
     user-select: none;
 

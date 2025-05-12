@@ -1,12 +1,12 @@
 // src/layouts/LandingLayout.tsx
 
 import { Outlet } from 'react-router-dom'
-// import { Header, Footer } from '@/components'
+import { Header, Footer } from '@/components'
 
-export const LPLayout = () => {
+export const MainLayout = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
         <Outlet />
       </main>

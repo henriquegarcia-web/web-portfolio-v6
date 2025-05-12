@@ -1,35 +1,39 @@
 import React, { createContext, useContext, useMemo, useState } from 'react'
 
-export interface ILPContextData {
+export interface IMainContextData {
   isAuthenticated: boolean
 }
 
-export const LPContext = createContext<ILPContextData>({} as ILPContextData)
+export const MainContext = createContext<IMainContextData>(
+  {} as IMainContextData
+)
 
-const LPProvider = ({ children }: { children: React.ReactNode }) => {
+const MainProvider = ({ children }: { children: React.ReactNode }) => {
   // ========================================================================
 
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
 
   // ========================================================================
 
-  const LPContextData: ILPContextData = useMemo(() => {
+  const MainContextData: IMainContextData = useMemo(() => {
     return {
       isAuthenticated
     }
   }, [isAuthenticated])
 
   return (
-    <LPContext.Provider value={LPContextData}>{children}</LPContext.Provider>
+    <MainContext.Provider value={MainContextData}>
+      {children}
+    </MainContext.Provider>
   )
 }
 
-function useLP(): ILPContextData {
-  const context = useContext(LPContext)
+function useMain(): IMainContextData {
+  const context = useContext(MainContext)
 
   if (!context) throw new Error('useAuth must be used within a UserProvider')
 
   return context
 }
 
-export { LPProvider, useLP }
+export { MainProvider, useMain }
