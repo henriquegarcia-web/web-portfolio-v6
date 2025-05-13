@@ -1,13 +1,23 @@
-import styled, { createGlobalStyle } from 'styled-components'
+// src/utils/styles/globals.ts
 
-import Colors from './colors'
-// import Fonts from "../styles/fonts";
+import { createGlobalStyle } from 'styled-components'
 
-export const responsiveDesktop = '1000px'
-export const responsiveTablet = '760px'
-export const responsiveMobile = '500px'
-
-export const clientHeaderHeight = '70px'
+export const Globals = {
+  breakpoints: {
+    desktop: '1000px',
+    tablet: '760px',
+    mobile: '500px'
+  },
+  layout: {
+    padding: '20px',
+    header: {
+      height: '60px'
+    },
+    content: {
+      maxWidth: '1200px'
+    }
+  }
+}
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -24,12 +34,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     border: none;
     outline: none;
-    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Roboto', sans-serif;
     /* font-family: "Montserrat", sans-serif; */
     /* font-family: "Baloo Paaji 2", sans-serif; */
     /* font-family: "Barlow", sans-serif; */
     /* font-family: "Open Sans", sans-serif; */
-    font-family: "Poppins", sans-serif;
     text-decoration: none;
     user-select: none;
 
@@ -37,29 +46,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   scroll-behavior: smooth;
-
-  ::-webkit-scrollbar {
-    width: 4px;
-    border-radius: 10px;
-    z-index: 1000;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: ${Colors.scrollbarTrack};
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: ${Colors.scrollbarThumb};
-  }
 `
 
 export default GlobalStyle
-
-export const Screen = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: fit-content;
-  min-height: 100vh;
-`

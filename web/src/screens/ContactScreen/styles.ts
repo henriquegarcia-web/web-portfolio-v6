@@ -1,7 +1,7 @@
 // src/screens/ContactScreen/styles.ts
 
 import styled from 'styled-components'
-import { Screen } from '@/utils/styles/globals'
+import { Screen } from '@/utils/styles/commons'
 
 export const ContactScreen = styled(Screen)`
   display: flex;

@@ -1,7 +1,7 @@
 // src/screens/ProjectsScreen/styles.ts
 
 import styled from 'styled-components'
-import { Screen } from '@/utils/styles/globals'
+import { Screen } from '@/utils/styles/commons'
 
 export const ProjectsScreen = styled(Screen)`
   display: flex;
