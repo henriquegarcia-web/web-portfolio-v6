@@ -1,9 +1,8 @@
 // src/screens/HomeScreen/styles.ts
 
 import styled from 'styled-components'
-import { Screen } from '@/utils/styles/commons'
 
-export const HomeScreen = styled(Screen)`
+export const HomeScreen = styled.main`
   display: flex;
 `
 
