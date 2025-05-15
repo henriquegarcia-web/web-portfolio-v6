@@ -1,5 +1,5 @@
 import styled from 'styled-components'
 
-export const SectionHeader = styled.div`
+export const UserCard = styled.div`
   display: flex;
 `

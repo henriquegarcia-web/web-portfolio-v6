@@ -11,7 +11,7 @@ export const Globals = {
   layout: {
     padding: '20px',
     header: {
-      height: '60px'
+      height: '80px'
     },
     content: {
       maxWidth: '1200px'

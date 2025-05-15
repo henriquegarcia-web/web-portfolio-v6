@@ -11,18 +11,19 @@ export const Colors = {
   info: '#1890ff',
 
   // Text
-  text: '#000000d9',
-  textBase: '#000000e0',
-  textHeading: '#000000e0',
+  text: '#ffffff',
+  textBase: '#ffffff',
+  textHeading: '#ffffff',
+  textLegend: '#B4AFAF',
   textLabel: '#00000073',
   textPlaceholder: '#00000040',
   textDisabled: '#00000040',
   textLightSolid: '#fff',
-  textSecondary: '#00000073',
+  textSecondary: '#353334',
   textDescription: '#00000073',
 
   // Backgrounds
-  bgBase: '#fff',
+  bgBase: '#151312',
   bgContainer: '#f5f5f5',
   bgLayout: '#f0f2f5',
   bgElevated: '#ffffff',
