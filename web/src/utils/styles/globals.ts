@@ -13,8 +13,13 @@ export const Globals = {
     header: {
       height: '80px'
     },
+    hero: {
+      card: {
+        width: '360px'
+      }
+    },
     content: {
-      maxWidth: '1200px'
+      maxWidth: '1100px'
     }
   }
 }

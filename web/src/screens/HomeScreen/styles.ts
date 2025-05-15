@@ -21,19 +21,19 @@ export const HomeWrapper = styled(Wrapper)`
 
 export const HeroSection = styled.div`
   display: flex;
-  column-gap: 40px;
+  column-gap: 80px;
 `
 
 export const HeroSectionLeft = styled.div`
   display: flex;
-  width: 40%;
+  width: ${Globals.layout.hero.card.width};
 `
 
 export const HeroSectionRight = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  width: 60%;
+  width: calc(100% - ${Globals.layout.hero.card.width} - 80px);
 `
 
 export const HeroSectionAttributes = styled.div`

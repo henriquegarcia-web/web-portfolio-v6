@@ -5,22 +5,26 @@ import { css } from 'styled-components'
 export const Colors = {
   // Brand
   primary: '#1677ff',
+  secondary: '#0f172a',
+  tertiary: '#facc15',
+  contrast: '#38bdf8',
+
   success: '#52c41a',
   warning: '#faad14',
   error: '#ff4d4f',
   info: '#1890ff',
 
   // Text
-  text: '#ffffff',
-  textBase: '#ffffff',
+  text: '#e2e8f0',
+  textBase: '#000000',
   textHeading: '#ffffff',
   textLegend: '#B4AFAF',
   textLabel: '#00000073',
   textPlaceholder: '#00000040',
   textDisabled: '#00000040',
-  textLightSolid: '#fff',
+  textButton: '#fff',
   textSecondary: '#353334',
-  textDescription: '#00000073',
+  textDescription: '#636363',
 
   // Backgrounds
   bgBase: '#151312',

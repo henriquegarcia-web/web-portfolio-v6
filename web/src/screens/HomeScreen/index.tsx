@@ -30,7 +30,11 @@ const HeroSection = ({}: IHeroSection) => {
         <UserCard />
       </S.HeroSectionLeft>
       <S.HeroSectionRight>
-        <SectionTitle title="Full-Stack" subtitle="Desenvolvedor" type="hero" />
+        <SectionTitle
+          title="Full-Stack"
+          subtitle="Desenvolvedor"
+          variant="hero"
+        />
         <SectionLegend>
           Desenvolvedor apaixonado por criar soluções digitais que fazem a
           diferença, com foco em experiência e inovação.
