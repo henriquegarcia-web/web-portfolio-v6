@@ -4,6 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Section from './Section'
 import SectionTitle from './SectionTitle'
+import SectionLegend from './SectionLegend'
 import UserCard from './UserCard'
 import AttributeCounter from './AttributeCounter'
 import SocialMedia from './SocialMedia'
@@ -14,6 +15,7 @@ export {
   Footer,
   Section,
   SectionTitle,
+  SectionLegend,
   UserCard,
   AttributeCounter,
   SocialMedia,

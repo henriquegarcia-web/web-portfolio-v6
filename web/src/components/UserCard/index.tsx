@@ -1,3 +1,4 @@
+import { portfolioContent } from '@/constants/content'
 import * as S from './styles'
 
 import { Button, SocialMedia } from '@/components'
@@ -8,19 +9,22 @@ const UserCard = ({}: IUserCard) => {
   return (
     <S.UserCard>
       <S.UserImage>
-        <img src="/me_01.png" alt="" />
+        <img
+          src={portfolioContent.hero.image.url}
+          alt={portfolioContent.hero.image.alt}
+        />
       </S.UserImage>
       <S.UserInfo>
-        <h3>Henrique Garcia</h3>
-        <p>Desenvolvedor full-stack com foco em front-end</p>
+        <h3>{portfolioContent.hero.name}</h3>
+        <p>{portfolioContent.hero.role}</p>
       </S.UserInfo>
       <S.UserContact>
-        <SocialMedia variant="icon" media="github" />
-        <SocialMedia variant="icon" media="linkedin" />
-        <SocialMedia variant="icon" media="threads" />
+        {portfolioContent.hero.medias.map((media) => (
+          <SocialMedia key={media} variant="icon" media={media} />
+        ))}
       </S.UserContact>
       <S.UserCta>
-        <Button label="Vamos conversar" onClick={() => {}} />
+        <Button label={portfolioContent.hero.cta} onClick={() => {}} />
       </S.UserCta>
     </S.UserCard>
   )

@@ -14,26 +14,27 @@ export const HomeScreen = styled.main`
 
 export const HomeWrapper = styled(Wrapper)`
   display: flex;
+  column-gap: 80px;
+`
+
+export const HomeLeft = styled.div`
+  display: flex;
+  width: ${Globals.layout.hero.card.width};
+`
+
+export const HomeRight = styled.div`
+  display: flex;
   flex-direction: column;
+  row-gap: 120px;
+  width: calc(100% - ${Globals.layout.hero.card.width} - 80px);
 `
 
 // ==================================== HERO SECTION
 
 export const HeroSection = styled.div`
   display: flex;
-  column-gap: 80px;
-`
-
-export const HeroSectionLeft = styled.div`
-  display: flex;
-  width: ${Globals.layout.hero.card.width};
-`
-
-export const HeroSectionRight = styled.div`
-  display: flex;
   flex-direction: column;
   row-gap: 20px;
-  width: calc(100% - ${Globals.layout.hero.card.width} - 80px);
 `
 
 export const HeroSectionAttributes = styled.div`
@@ -41,4 +42,36 @@ export const HeroSectionAttributes = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-top: 30px;
+`
+
+// ==================================== PROJECTS SECTION
+
+export const ProjectsSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+`
+
+// ==================================== EXPERIENCE SECTION
+
+export const ExperienceSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+`
+
+// ==================================== TECS SECTION
+
+export const TecsSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+`
+
+// ==================================== LEARNING SECTION
+
+export const LearningSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 `

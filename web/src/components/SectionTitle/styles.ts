@@ -10,18 +10,23 @@ export const SectionTitle = styled.div<{ ishero?: number }>`
   h1 {
     text-transform: uppercase;
 
-    ${fontSize('heroTitle')}
-    ${fontHeight('heroTitle')}
+    ${({ ishero }) =>
+      ishero ? fontSize('heroTitle') : fontSize('sectionTitle')}
+    ${({ ishero }) =>
+      ishero ? fontHeight('heroTitle') : fontSize('sectionTitle')}
     ${fontWeight('bold')}
 
     ${color('textHeading')}
   }
 
   h2 {
+    margin-top: ${({ ishero }) => (ishero ? '0px' : '-12px')};
     text-transform: uppercase;
 
-    ${fontSize('heroLegend')}
-    ${fontHeight('heroLegend')}
+    ${({ ishero }) =>
+      ishero ? fontSize('heroLegend') : fontSize('sectionLegend')}
+    ${({ ishero }) =>
+      ishero ? fontHeight('heroLegend') : fontSize('sectionLegend')}
     ${fontWeight('bold')}
 
     ${color('textSecondary')}

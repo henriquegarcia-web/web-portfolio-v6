@@ -22,6 +22,8 @@ interface FontSizes {
   attributeCounter: FontStyle
   heroTitle: FontStyle
   heroLegend: FontStyle
+  sectionTitle: FontStyle
+  sectionLegend: FontStyle
 }
 
 type FontSizeKeys = keyof FontSizes
@@ -93,6 +95,14 @@ export const Fonts: FontSizes = {
   heroLegend: {
     size: '4.375rem', // 80px
     height: '4.375rem' // 80px
+  },
+  sectionTitle: {
+    size: '5.625rem', // 90px
+    height: '5.625rem' // 90px
+  },
+  sectionLegend: {
+    size: '4.063rem', // 65px
+    height: '4.063rem' // 65px
   }
 } as const
 

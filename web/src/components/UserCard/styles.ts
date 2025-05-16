@@ -2,8 +2,11 @@ import styled from 'styled-components'
 
 import { fontHeight, fontSize, fontWeight } from '@/utils/styles/fonts'
 import { backgroundColor, color, Colors } from '@/utils/styles/colors'
+import { Globals } from '@/utils/styles/globals'
 
 export const UserCard = styled.div`
+  position: sticky;
+  top: ${Globals.layout.header.height};
   display: flex;
   flex-direction: column;
   align-items: center;
