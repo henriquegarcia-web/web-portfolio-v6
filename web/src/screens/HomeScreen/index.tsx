@@ -9,6 +9,7 @@ import {
   UserCard
 } from '@/components'
 import { portfolioContent } from '@/constants/content'
+import { useEffect, useRef, useState } from 'react'
 
 interface IHomeScreen {}
 
@@ -69,14 +70,79 @@ const HeroSection = ({}: IHeroSection) => {
 interface IProjectsSection {}
 
 const ProjectsSection = ({}: IProjectsSection) => {
+  const { title, subtitle, items } = portfolioContent.projects
+
   return (
     <S.ProjectsSection>
-      <SectionTitle
-        title={portfolioContent.sectionLabels.projects.title}
-        subtitle={portfolioContent.sectionLabels.projects.subtitle}
-        variant="section"
-      />
+      <SectionTitle title={title} subtitle={subtitle} variant="section" />
+
+      {items.map((item) => (
+        <ProjectCard
+          key={item.title}
+          images={item.images}
+          title={item.title}
+          description={item.description}
+          techStack={item.techStack}
+        />
+      ))}
     </S.ProjectsSection>
+  )
+}
+
+interface ProjectCardProps {
+  title: string
+  description: string
+  images: readonly string[]
+  techStack: readonly string[]
+}
+
+const ProjectCard = ({
+  title,
+  description,
+  images,
+  techStack
+}: ProjectCardProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [hovered, setHovered] = useState(false)
+
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
+
+  useEffect(() => {
+    if (hovered) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % images.length)
+      }, 3000)
+    } else {
+      clearInterval(intervalRef.current!)
+      setCurrentIndex(0)
+    }
+
+    return () => clearInterval(intervalRef.current!)
+  }, [hovered, images.length])
+
+  return (
+    <S.ProjectItem
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <S.ProjectItemImage>
+        <S.ProjectImageSlider $currentIndex={currentIndex}>
+          {images.map((img, i) => (
+            <S.ProjectImageSlide key={i} src={img} alt={`${title}-${i}`} />
+          ))}
+        </S.ProjectImageSlider>
+      </S.ProjectItemImage>
+
+      <S.ProjectItemContent>
+        <S.ProjectItemTitle>{title}</S.ProjectItemTitle>
+        <S.ProjectItemDescription>{description}</S.ProjectItemDescription>
+        <S.ProjectItemTechStack>
+          {techStack.map((tech) => (
+            <span key={tech}>{tech}</span>
+          ))}
+        </S.ProjectItemTechStack>
+      </S.ProjectItemContent>
+    </S.ProjectItem>
   )
 }
 
@@ -85,13 +151,11 @@ const ProjectsSection = ({}: IProjectsSection) => {
 interface IExperienceSection {}
 
 const ExperienceSection = ({}: IExperienceSection) => {
+  const { title, subtitle, items } = portfolioContent.experience
+
   return (
     <S.ExperienceSection>
-      <SectionTitle
-        title={portfolioContent.sectionLabels.experience.title}
-        subtitle={portfolioContent.sectionLabels.experience.subtitle}
-        variant="section"
-      />
+      <SectionTitle title={title} subtitle={subtitle} variant="section" />
     </S.ExperienceSection>
   )
 }
@@ -101,13 +165,11 @@ const ExperienceSection = ({}: IExperienceSection) => {
 interface ITecsSection {}
 
 const TecsSection = ({}: ITecsSection) => {
+  const { title, subtitle, items } = portfolioContent.technologies
+
   return (
     <S.TecsSection>
-      <SectionTitle
-        title={portfolioContent.sectionLabels.technologies.title}
-        subtitle={portfolioContent.sectionLabels.technologies.subtitle}
-        variant="section"
-      />
+      <SectionTitle title={title} subtitle={subtitle} variant="section" />
     </S.TecsSection>
   )
 }
@@ -117,13 +179,11 @@ const TecsSection = ({}: ITecsSection) => {
 interface ILearningSection {}
 
 const LearningSection = ({}: ILearningSection) => {
+  const { title, subtitle } = portfolioContent.learning
+
   return (
     <S.LearningSection>
-      <SectionTitle
-        title={portfolioContent.sectionLabels.learning.title}
-        subtitle={portfolioContent.sectionLabels.learning.subtitle}
-        variant="section"
-      />
+      <SectionTitle title={title} subtitle={subtitle} variant="section" />
     </S.LearningSection>
   )
 }

@@ -16,7 +16,7 @@ export const Colors = {
 
   // Text
   text: '#e2e8f0',
-  textBase: '#000000',
+  textBase: '#151312',
   textHeading: '#ffffff',
   textLegend: '#B4AFAF',
   textLabel: '#00000073',
@@ -35,7 +35,7 @@ export const Colors = {
 
   // Borders
   border: '#d9d9d9',
-  borderSecondary: '#f0f0f0',
+  borderSecondary: '#2a2a2a',
   split: '#f0f0f0'
 } as const
 
