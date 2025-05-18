@@ -1,9 +1,11 @@
 import * as S from './styles'
 
 export type ButtonVariant = 'primary' | 'secondary'
+export type ButtonType = 'button' | 'submit' | 'reset'
 
 interface IButton {
   variant?: ButtonVariant
+  type?: ButtonType
   label: string
   loading?: boolean
   disabled?: boolean
@@ -12,6 +14,7 @@ interface IButton {
 
 const Button = ({
   variant = 'primary',
+  type = 'button',
   label,
   disabled,
   loading,
@@ -19,6 +22,7 @@ const Button = ({
 }: IButton) => {
   return (
     <S.Button
+      type={type}
       variant={variant}
       disabled={disabled || loading}
       onClick={onClick}

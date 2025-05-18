@@ -72,7 +72,6 @@ export interface TechnologySection {
 export interface TechnologyItem {
   name: string
   logo: string
-  level: 'Tenho domínio' | 'Sei me virar' | 'Estou aprendendo'
 }
 
 export interface LearningSection {
@@ -207,108 +206,87 @@ export const portfolioContent: PortfolioContent = {
     items: [
       {
         name: 'JavaScript',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
       },
       {
         name: 'TypeScript',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
       },
       {
         name: 'React',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
       },
       {
         name: 'React Native',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
       },
       {
         name: 'Next.js',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
       },
       {
         name: 'Node.js',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
       },
       {
         name: 'PHP',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
-        level: 'Sei me virar'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
       },
       {
         name: 'Python',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
-        level: 'Estou aprendendo'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg'
       },
       {
         name: 'Firebase',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg'
       },
       {
         name: 'Docker',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-        level: 'Sei me virar'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
       },
       {
         name: 'GraphQL',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
-        level: 'Sei me virar'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg'
       },
       {
         name: 'MongoDB',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
       },
       {
         name: 'PostgreSQL',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
       },
       {
         name: 'Redux',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg'
       },
       {
         name: 'SASS',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg'
       },
       {
         name: 'Tailwind CSS',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg'
       },
       {
         name: 'AWS',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
-        level: 'Sei me virar'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
       },
       {
         name: 'MySQL',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-        level: 'Sei me virar'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
       },
       {
         name: 'Jest',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg',
-        level: 'Sei me virar'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg'
       },
       {
         name: 'Express',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-        level: 'Tenho domínio'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
       },
       {
         name: 'C',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
-        level: 'Estou aprendendo'
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg'
       }
     ]
   },

@@ -16,14 +16,14 @@ export const HomeScreen = styled.main`
   margin-top: ${Globals.layout.header.height};
   padding: 0 ${Globals.layout.padding};
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `
 
 export const HomeWrapper = styled(Wrapper)`
   display: flex;
   column-gap: 80px;
 
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 `
 
 export const HomeLeft = styled.div`
@@ -355,10 +355,23 @@ export const ContactMeSection = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 40px;
+  padding: 60px 0 20px 0;
 `
 
 export const ContactMeSectionContent = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+`
+
+export const ContactMeFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  margin-top: 20px;
+`
+
+export const SubmissionStatus = styled.span`
+  color: green;
+  font-size: 0.9rem;
 `

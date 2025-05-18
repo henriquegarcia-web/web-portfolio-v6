@@ -8,7 +8,10 @@ import SectionLegend from './SectionLegend'
 import UserCard from './UserCard'
 import AttributeCounter from './AttributeCounter'
 import SocialMedia from './SocialMedia'
-import Button from './Button'
+
+import Button from './inputs/Button'
+import Input from './inputs/Input'
+import TextArea from './inputs/TextArea'
 
 export {
   Header,
@@ -19,5 +22,7 @@ export {
   UserCard,
   AttributeCounter,
   SocialMedia,
-  Button
+  Button,
+  Input,
+  TextArea
 }

@@ -1,15 +1,23 @@
 // src/screens/HomeScreen/index.tsx
 
+import { useEffect, useRef, useState } from 'react'
+
 import * as S from './styles'
 
 import {
   AttributeCounter,
   SectionTitle,
   SectionLegend,
-  UserCard
+  UserCard,
+  Input,
+  TextArea,
+  Button
 } from '@/components'
 import { portfolioContent } from '@/constants/content'
-import { useEffect, useRef, useState } from 'react'
+
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 
 interface IHomeScreen {}
 
@@ -205,7 +213,7 @@ const TecsSection = ({}: ITecsSection) => {
 
       <S.TecsGrid>
         {items.map((tech) => (
-          <TechCard key={tech.name + tech.level} tech={tech} />
+          <TechCard key={tech.name + tech.logo.length} tech={tech} />
         ))}
       </S.TecsGrid>
     </S.TecsSection>
@@ -251,9 +259,39 @@ const AboutMeSection = ({}: IAboutMeSection) => {
 
 // ==================================== ABOUT ME SECTION
 
+interface ContactFormValues {
+  name: string
+  email: string
+  message: string
+}
+
+const schema = yup.object({
+  name: yup.string().required('Digite seu nome.'),
+  email: yup.string().email('E-mail inválido.').required('Digite seu e-mail.'),
+  message: yup
+    .string()
+    .min(10, 'Mensagem muito curta.')
+    .required('Escreva sua mensagem.')
+})
 interface IContactMeSection {}
 
-const ContactMeSection = ({}: IContactMeSection) => {
+export const ContactMeSection = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting, isSubmitSuccessful }
+  } = useForm<ContactFormValues>({
+    resolver: yupResolver(schema),
+    mode: 'onBlur'
+  })
+
+  const onSubmit = async (data: ContactFormValues) => {
+    console.log(data)
+    // Integração futura com Email API ou Firebase
+    reset()
+  }
+
   const { title, subtitle } = portfolioContent.contactMe
 
   return (
@@ -264,7 +302,44 @@ const ContactMeSection = ({}: IContactMeSection) => {
         variant="section"
         centered
       />
-      <S.ContactMeSectionContent></S.ContactMeSectionContent>
+
+      <S.ContactMeSectionContent as="form" onSubmit={handleSubmit(onSubmit)}>
+        <Input
+          label="Nome"
+          placeholder="Digite seu nome completo"
+          error={errors.name?.message}
+          {...register('name')}
+        />
+        <Input
+          label="E-mail"
+          placeholder="seu@email.com"
+          type="email"
+          error={errors.email?.message}
+          {...register('email')}
+        />
+        <TextArea
+          label="Mensagem"
+          placeholder="Digite sua mensagem"
+          rows={5}
+          error={errors.message?.message}
+          {...register('message')}
+        />
+
+        <S.ContactMeFooter>
+          <Button
+            type="submit"
+            label={isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
+            disabled={isSubmitting}
+            onClick={() => {}}
+          />
+
+          {isSubmitSuccessful && (
+            <S.SubmissionStatus>
+              Mensagem enviada com sucesso!
+            </S.SubmissionStatus>
+          )}
+        </S.ContactMeFooter>
+      </S.ContactMeSectionContent>
     </S.ContactMeSection>
   )
 }
