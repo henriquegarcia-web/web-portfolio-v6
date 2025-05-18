@@ -15,15 +15,11 @@ export const HomeScreen = styled.main`
   width: 100%;
   margin-top: ${Globals.layout.header.height};
   padding: 0 ${Globals.layout.padding};
-
-  /* border: 1px solid red; */
 `
 
 export const HomeWrapper = styled(Wrapper)`
   display: flex;
   column-gap: 80px;
-
-  /* border: 1px solid blue; */
 `
 
 export const HomeLeft = styled.div`
@@ -265,20 +261,17 @@ export const TecsSection = styled.div`
 `
 
 export const TecsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
 `
 
 export const TechCard = styled.div`
   display: flex;
   align-items: center;
+  width: calc(33% - 12.5px);
   gap: 16px;
-  padding: 16px;
+  padding: 14px 16px;
   border-radius: 8px;
   transition: background-color 0.2s ease;
 
@@ -296,8 +289,8 @@ export const TechCard = styled.div`
 `
 
 export const TechCardLogo = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 
   img {
     width: 100%;
@@ -316,13 +309,6 @@ export const TechCardName = styled.h4`
   ${fontSize('regular')};
   ${fontWeight('medium')};
   ${color('textHeading')};
-`
-
-export const TechCardLevel = styled.span`
-  transition: all 0.2s;
-
-  ${fontSize('small')};
-  ${color('textDescription')};
 `
 
 // ==================================== LEARNING SECTION
@@ -354,14 +340,18 @@ export const AboutMeContent = styled.div`
 export const ContactMeSection = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 40px;
+  width: 100%;
   padding: 60px 0 20px 0;
 `
 
-export const ContactMeSectionContent = styled.div`
+export const ContactMeSectionContent = styled.form`
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  width: 100%;
+  max-width: 680px;
 `
 
 export const ContactMeFooter = styled.div`

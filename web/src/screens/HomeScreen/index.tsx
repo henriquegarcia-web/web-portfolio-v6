@@ -234,7 +234,6 @@ export const TechCard = ({ tech }: TechCardProps) => {
       </S.TechCardLogo>
       <S.TechCardInfo>
         <S.TechCardName>{name}</S.TechCardName>
-        <S.TechCardLevel>{level}</S.TechCardLevel>
       </S.TechCardInfo>
     </S.TechCard>
   )
@@ -303,7 +302,7 @@ export const ContactMeSection = () => {
         centered
       />
 
-      <S.ContactMeSectionContent as="form" onSubmit={handleSubmit(onSubmit)}>
+      <S.ContactMeSectionContent onSubmit={handleSubmit(onSubmit)}>
         <Input
           label="Nome"
           placeholder="Digite seu nome completo"

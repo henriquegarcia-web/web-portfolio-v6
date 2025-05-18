@@ -15,7 +15,7 @@ export const SectionTitle = styled.div<{ ishero?: number; centered?: number }>`
       ishero ? fontSize('heroTitle') : fontSize('sectionTitle')}
     ${({ ishero }) =>
       ishero ? fontHeight('heroTitle') : fontSize('sectionTitle')}
-    ${fontWeight('bold')}
+    ${fontWeight('black')}
 
     ${color('textHeading')}
   }
@@ -28,7 +28,7 @@ export const SectionTitle = styled.div<{ ishero?: number; centered?: number }>`
       ishero ? fontSize('heroLegend') : fontSize('sectionLegend')}
     ${({ ishero }) =>
       ishero ? fontHeight('heroLegend') : fontSize('sectionLegend')}
-    ${fontWeight('bold')}
+    ${fontWeight('black')}
 
     ${color('textSecondary')}
   }

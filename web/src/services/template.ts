@@ -1,4 +1,4 @@
-import api from '@/lib/fetch'
+import api from '@/libs/fetch'
 
 const fetchTemplate = async (): Promise<boolean> => {
   try {
