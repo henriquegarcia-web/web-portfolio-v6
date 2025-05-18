@@ -15,7 +15,7 @@ export const Globals = {
     },
     hero: {
       card: {
-        width: '360px'
+        width: '320px'
       }
     },
     content: {

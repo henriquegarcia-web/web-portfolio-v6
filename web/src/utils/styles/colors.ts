@@ -28,9 +28,9 @@ export const Colors = {
 
   // Backgrounds
   bgBase: '#151312',
-  bgContainer: '#f5f5f5',
-  bgLayout: '#f0f2f5',
-  bgElevated: '#ffffff',
+  bgContainer: '#ffffff',
+  bgLayout: '#1f1f1f',
+  bgElevated: '#1f1f1f',
   bgSpotlight: '#fafafa',
 
   // Borders

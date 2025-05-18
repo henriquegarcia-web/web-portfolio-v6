@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import { fontHeight, fontSize, fontWeight } from '@/utils/styles/fonts'
 import { color } from '@/utils/styles/colors'
 
-export const SectionTitle = styled.div<{ ishero?: number }>`
+export const SectionTitle = styled.div<{ ishero?: number; centered?: number }>`
   display: flex;
   flex-direction: column;
+  text-align: ${({ centered }) => (centered ? 'center' : 'left')};
 
   h1 {
     text-transform: uppercase;

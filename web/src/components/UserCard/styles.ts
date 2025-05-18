@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { fontHeight, fontSize, fontWeight } from '@/utils/styles/fonts'
-import { backgroundColor, color, Colors } from '@/utils/styles/colors'
+import { backgroundColor, borderColor, color } from '@/utils/styles/colors'
 import { Globals } from '@/utils/styles/globals'
 
 export const UserCard = styled.div`
@@ -16,7 +16,7 @@ export const UserCard = styled.div`
   padding: 20px;
   border-radius: 14px;
 
-  ${backgroundColor('bgElevated')}
+  ${backgroundColor('bgContainer')}
 `
 
 export const UserImage = styled.div`
@@ -26,7 +26,8 @@ export const UserImage = styled.div`
   border-radius: 12px;
   overflow: hidden;
 
-  border: 8px solid ${Colors.primary};
+  border: 6px solid;
+  ${borderColor('primary')}
 
   img {
     width: 100%;

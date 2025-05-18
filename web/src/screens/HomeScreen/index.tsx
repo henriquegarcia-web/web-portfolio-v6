@@ -25,9 +25,10 @@ const HomeScreen = ({}: IHomeScreen) => {
           <ProjectsSection />
           <ExperienceSection />
           <TecsSection />
-          <LearningSection />
+          <AboutMeSection />
         </S.HomeRight>
       </S.HomeWrapper>
+      <ContactMeSection />
     </S.HomeScreen>
   )
 }
@@ -75,33 +76,22 @@ const ProjectsSection = ({}: IProjectsSection) => {
   return (
     <S.ProjectsSection>
       <SectionTitle title={title} subtitle={subtitle} variant="section" />
-
-      {items.map((item) => (
-        <ProjectCard
-          key={item.title}
-          images={item.images}
-          title={item.title}
-          description={item.description}
-          techStack={item.techStack}
-        />
-      ))}
+      <S.ProjectsSectionContent>
+        {items.map((project) => (
+          <ProjectCard key={project.title} project={project} />
+        ))}
+      </S.ProjectsSectionContent>
     </S.ProjectsSection>
   )
 }
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  images: readonly string[]
-  techStack: readonly string[]
+  project: any
 }
 
-const ProjectCard = ({
-  title,
-  description,
-  images,
-  techStack
-}: ProjectCardProps) => {
+const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { images, title, description, url, techStack } = project
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [hovered, setHovered] = useState(false)
 
@@ -121,28 +111,28 @@ const ProjectCard = ({
   }, [hovered, images.length])
 
   return (
-    <S.ProjectItem
+    <S.ProjectCard
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <S.ProjectItemImage>
+      <S.ProjectCardImage>
         <S.ProjectImageSlider $currentIndex={currentIndex}>
-          {images.map((img, i) => (
+          {images.map((img: string, i: string) => (
             <S.ProjectImageSlide key={i} src={img} alt={`${title}-${i}`} />
           ))}
         </S.ProjectImageSlider>
-      </S.ProjectItemImage>
+      </S.ProjectCardImage>
 
-      <S.ProjectItemContent>
-        <S.ProjectItemTitle>{title}</S.ProjectItemTitle>
-        <S.ProjectItemDescription>{description}</S.ProjectItemDescription>
-        <S.ProjectItemTechStack>
-          {techStack.map((tech) => (
+      <S.ProjectCardContent>
+        <S.ProjectCardTitle>{title}</S.ProjectCardTitle>
+        <S.ProjectCardDescription>{description}</S.ProjectCardDescription>
+        <S.ProjectCardTechStack>
+          {techStack.map((tech: string) => (
             <span key={tech}>{tech}</span>
           ))}
-        </S.ProjectItemTechStack>
-      </S.ProjectItemContent>
-    </S.ProjectItem>
+        </S.ProjectCardTechStack>
+      </S.ProjectCardContent>
+    </S.ProjectCard>
   )
 }
 
@@ -156,7 +146,49 @@ const ExperienceSection = ({}: IExperienceSection) => {
   return (
     <S.ExperienceSection>
       <SectionTitle title={title} subtitle={subtitle} variant="section" />
+      <S.ExperienceSectionContent>
+        {items.map((experience) => (
+          <ExperienceCard key={experience.company} experience={experience} />
+        ))}
+      </S.ExperienceSectionContent>
     </S.ExperienceSection>
+  )
+}
+
+interface ExperienceCardProps {
+  experience: any
+}
+
+export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
+  const {
+    company,
+    role,
+    period,
+    description,
+    image = '/placeholder-company.png',
+    techStack
+  } = experience
+
+  return (
+    <S.ExperienceCard>
+      <S.ExperienceCardImage>
+        <img src={image} alt={`Logo da empresa ${company}`} />
+      </S.ExperienceCardImage>
+
+      <S.ExperienceCardContent>
+        <S.ExperienceCardHeader>
+          <S.ExperienceCardCompany>{company}</S.ExperienceCardCompany>
+          <S.ExperienceCardPeriod>{period}</S.ExperienceCardPeriod>
+        </S.ExperienceCardHeader>
+        <S.ExperienceCardRole>{role}</S.ExperienceCardRole>
+        <S.ExperienceCardDescription>{description}</S.ExperienceCardDescription>
+        <S.ExperienceCardTechStack>
+          {techStack.map((tech: string) => (
+            <span key={tech}>{tech}</span>
+          ))}
+        </S.ExperienceCardTechStack>
+      </S.ExperienceCardContent>
+    </S.ExperienceCard>
   )
 }
 
@@ -170,20 +202,83 @@ const TecsSection = ({}: ITecsSection) => {
   return (
     <S.TecsSection>
       <SectionTitle title={title} subtitle={subtitle} variant="section" />
+
+      <S.TecsGrid>
+        {items.map((tech) => (
+          <TechCard key={tech.name + tech.level} tech={tech} />
+        ))}
+      </S.TecsGrid>
     </S.TecsSection>
   )
 }
 
-// ==================================== LEARNING SECTION
+interface TechCardProps {
+  tech: any
+}
 
-interface ILearningSection {}
-
-const LearningSection = ({}: ILearningSection) => {
-  const { title, subtitle } = portfolioContent.learning
+export const TechCard = ({ tech }: TechCardProps) => {
+  const { logo, name, level } = tech
 
   return (
-    <S.LearningSection>
-      <SectionTitle title={title} subtitle={subtitle} variant="section" />
-    </S.LearningSection>
+    <S.TechCard>
+      <S.TechCardLogo>
+        <img src={logo} alt={name} />
+      </S.TechCardLogo>
+      <S.TechCardInfo>
+        <S.TechCardName>{name}</S.TechCardName>
+        <S.TechCardLevel>{level}</S.TechCardLevel>
+      </S.TechCardInfo>
+    </S.TechCard>
   )
 }
+
+// ==================================== ABOUT ME SECTION
+
+interface IAboutMeSection {}
+
+const AboutMeSection = ({}: IAboutMeSection) => {
+  const { title, subtitle } = portfolioContent.aboutMe
+
+  return (
+    <S.AboutMeSection>
+      <SectionTitle title={title} subtitle={subtitle} variant="section" />
+      <S.AboutMeContent>
+        <p>{portfolioContent.aboutMe.content}</p>
+      </S.AboutMeContent>
+    </S.AboutMeSection>
+  )
+}
+
+// ==================================== ABOUT ME SECTION
+
+interface IContactMeSection {}
+
+const ContactMeSection = ({}: IContactMeSection) => {
+  const { title, subtitle } = portfolioContent.contactMe
+
+  return (
+    <S.ContactMeSection>
+      <SectionTitle
+        title={title}
+        subtitle={subtitle}
+        variant="section"
+        centered
+      />
+      <S.ContactMeSectionContent></S.ContactMeSectionContent>
+    </S.ContactMeSection>
+  )
+}
+
+// // ==================================== LEARNING SECTION
+
+// interface ILearningSection {}
+
+// const LearningSection = ({}: ILearningSection) => {
+//   const { title, subtitle } = portfolioContent.learning
+
+//   return (
+//     <S.LearningSection>
+//       <SectionTitle title={title} subtitle={subtitle} variant="section" />
+//     </S.LearningSection>
+//   )
+// }

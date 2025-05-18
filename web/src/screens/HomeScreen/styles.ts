@@ -9,14 +9,21 @@ import { backgroundColor, borderColor, color } from '@/utils/styles/colors'
 
 export const HomeScreen = styled.main`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 120px;
   width: 100%;
   margin-top: ${Globals.layout.header.height};
+  padding: 0 ${Globals.layout.padding};
+
+  border: 1px solid red;
 `
 
 export const HomeWrapper = styled(Wrapper)`
   display: flex;
   column-gap: 80px;
+
+  border: 1px solid blue;
 `
 
 export const HomeLeft = styled.div`
@@ -36,7 +43,7 @@ export const HomeRight = styled.div`
 export const HeroSection = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 40px;
 `
 
 export const HeroSectionAttributes = styled.div`
@@ -51,10 +58,16 @@ export const HeroSectionAttributes = styled.div`
 export const ProjectsSection = styled.div`
   display: flex;
   flex-direction: column;
+  row-gap: 40px;
+`
+
+export const ProjectsSectionContent = styled.div`
+  display: flex;
+  flex-direction: column;
   row-gap: 20px;
 `
 
-export const ProjectItem = styled.div`
+export const ProjectCard = styled.div`
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -63,18 +76,15 @@ export const ProjectItem = styled.div`
   transition: background-color 0.2s ease;
 
   border: 1px solid;
-  ${borderColor('borderSecondary')}
+  ${borderColor('borderSecondary')};
+  ${backgroundColor('bgBase')};
 
   &:hover {
     ${backgroundColor('bgElevated')};
-
-    h3 {
-      ${color('textBase')};
-    }
   }
 `
 
-export const ProjectItemImage = styled.div`
+export const ProjectCardImage = styled.div`
   position: relative;
   width: 220px;
   min-width: 220px;
@@ -83,8 +93,8 @@ export const ProjectItemImage = styled.div`
   overflow: hidden;
 
   background-color: #1e1e1e;
-  border: 2px solid;
-  ${borderColor('borderSecondary')}
+  border: 1px solid;
+  ${borderColor('borderSecondary')};
 `
 
 export const ProjectImageSlider = styled.div<{ $currentIndex: number }>`
@@ -102,13 +112,13 @@ export const ProjectImageSlide = styled.img`
   flex-shrink: 0;
 `
 
-export const ProjectItemContent = styled.div`
+export const ProjectCardContent = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 12px;
 `
 
-export const ProjectItemTitle = styled.h3`
+export const ProjectCardTitle = styled.h3`
   transition: background-color 0.2s ease;
 
   ${fontSize('xl')};
@@ -117,13 +127,13 @@ export const ProjectItemTitle = styled.h3`
   ${color('textHeading')};
 `
 
-export const ProjectItemDescription = styled.p`
+export const ProjectCardDescription = styled.p`
   ${fontSize('regular')};
   ${fontHeight('xl')};
   ${color('textDescription')};
 `
 
-export const ProjectItemTechStack = styled.div`
+export const ProjectCardTechStack = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -136,7 +146,7 @@ export const ProjectItemTechStack = styled.div`
     font-size: 0.75rem;
     font-weight: 500;
 
-    ${backgroundColor('bgLayout')};
+    ${backgroundColor('bgContainer')};
     ${color('textSecondary')};
   }
 `
@@ -146,7 +156,104 @@ export const ProjectItemTechStack = styled.div`
 export const ExperienceSection = styled.div`
   display: flex;
   flex-direction: column;
+  row-gap: 40px;
+`
+
+export const ExperienceSectionContent = styled.div`
+  display: flex;
+  flex-direction: column;
   row-gap: 20px;
+`
+
+export const ExperienceCard = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+
+  border: 1px solid;
+  ${borderColor('borderSecondary')};
+  ${backgroundColor('bgBase')};
+
+  &:hover {
+    ${backgroundColor('bgElevated')};
+  }
+`
+
+export const ExperienceCardImage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  min-width: 65px;
+  height: 65px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  background-color: #1e1e1e;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`
+
+export const ExperienceCardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+`
+
+export const ExperienceCardHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const ExperienceCardCompany = styled.h4`
+  ${fontSize('large')};
+  ${fontHeight('large')};
+  ${fontWeight('bold')};
+  ${color('textHeading')};
+`
+
+export const ExperienceCardPeriod = styled.span`
+  ${fontSize('xs')};
+  ${color('textSecondary')};
+`
+
+export const ExperienceCardRole = styled.p`
+  ${fontSize('regular')};
+  ${fontWeight('medium')};
+  ${color('textDescription')};
+`
+
+export const ExperienceCardDescription = styled.p`
+  ${fontSize('regular')};
+  ${fontHeight('xl')};
+  ${color('textDescription')};
+`
+
+export const ExperienceCardTechStack = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+
+  span {
+    padding: 4px 8px;
+    border-radius: 6px;
+
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    ${backgroundColor('bgContainer')};
+    ${color('textSecondary')};
+  }
 `
 
 // ==================================== TECS SECTION
@@ -154,12 +261,103 @@ export const ExperienceSection = styled.div`
 export const TecsSection = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 40px;
+`
+
+export const TecsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+export const TechCard = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+
+  border: 1px solid;
+  ${borderColor('borderSecondary')};
+  ${backgroundColor('bgBase')};
+
+  &:hover {
+    ${backgroundColor('bgElevated')};
+
+    span {
+      ${color('primary')};
+    }
+  }
+`
+
+export const TechCardLogo = styled.div`
+  width: 40px;
+  height: 40px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+`
+
+export const TechCardInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+`
+
+export const TechCardName = styled.h4`
+  ${fontSize('regular')};
+  ${fontWeight('medium')};
+  ${color('textHeading')};
+`
+
+export const TechCardLevel = styled.span`
+  transition: all 0.2s;
+
+  ${fontSize('small')};
+  ${color('textDescription')};
 `
 
 // ==================================== LEARNING SECTION
 
-export const LearningSection = styled.div`
+// export const LearningSection = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   row-gap: 40px;
+// `
+
+// ==================================== ABOUT ME SECTION
+
+export const AboutMeSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+`
+
+export const AboutMeContent = styled.div`
+  ${fontSize('large')};
+  ${fontHeight('xxxl')};
+  ${fontWeight('light')};
+
+  ${color('text')};
+`
+
+// ==================================== CONTACT ME SECTION
+
+export const ContactMeSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+`
+
+export const ContactMeSectionContent = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 20px;

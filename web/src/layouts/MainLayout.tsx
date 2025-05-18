@@ -10,7 +10,7 @@ export const MainLayout = () => {
     <Screen>
       <Header />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </Screen>
   )
 }
