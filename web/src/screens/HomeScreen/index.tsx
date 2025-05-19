@@ -12,7 +12,8 @@ import {
   Input,
   TextArea,
   Button,
-  GlowCard
+  GlowCard,
+  TechIcon
 } from '@/components'
 import { portfolioContent } from '@/constants/content'
 import { Fade } from 'react-awesome-reveal'
@@ -248,7 +249,7 @@ export const TechCard = ({ tech }: TechCardProps) => {
   return (
     <S.TechCard>
       <S.TechCardLogo>
-        <img src={logo} alt={name} />
+        <TechIcon iconId={logo} />
       </S.TechCardLogo>
       <S.TechCardInfo>
         <S.TechCardName>{name}</S.TechCardName>

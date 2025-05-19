@@ -8,6 +8,7 @@ import SectionLegend from './SectionLegend'
 import UserCard from './UserCard'
 import AttributeCounter from './AttributeCounter'
 import SocialMedia from './SocialMedia'
+import TechIcon from './TechIcon'
 
 import GlowCard from './GlowCard'
 
@@ -27,5 +28,6 @@ export {
   Button,
   Input,
   TextArea,
-  GlowCard
+  GlowCard,
+  TechIcon
 }

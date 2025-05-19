@@ -206,87 +206,87 @@ export const portfolioContent: PortfolioContent = {
     items: [
       {
         name: 'JavaScript',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+        logo: 'javascript'
       },
       {
         name: 'TypeScript',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
+        logo: 'typescript'
       },
       {
         name: 'React',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+        logo: 'react'
       },
       {
         name: 'React Native',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+        logo: 'react_native'
       },
       {
         name: 'Next.js',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
+        logo: 'next_js'
       },
       {
         name: 'Node.js',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+        logo: 'node_js'
       },
       {
         name: 'PHP',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
+        logo: 'php'
       },
       {
         name: 'Python',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg'
+        logo: 'python'
       },
       {
         name: 'Firebase',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg'
+        logo: 'firebase'
       },
       {
         name: 'Docker',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+        logo: 'docker'
       },
       {
         name: 'GraphQL',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg'
+        logo: 'graphql'
       },
       {
         name: 'MongoDB',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
+        logo: 'mongodb'
       },
       {
         name: 'PostgreSQL',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+        logo: 'postgresql'
       },
       {
         name: 'Redux',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg'
+        logo: 'redux'
       },
       {
         name: 'SASS',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg'
+        logo: 'sass'
       },
       {
         name: 'Tailwind CSS',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg'
+        logo: 'tailwind_css'
       },
       {
         name: 'AWS',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
+        logo: 'aws'
       },
       {
         name: 'MySQL',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
+        logo: 'mysql'
       },
       {
         name: 'Jest',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg'
+        logo: 'jest'
       },
       {
         name: 'Express',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg'
+        logo: 'express'
       },
       {
         name: 'C',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg'
+        logo: 'c'
       }
     ]
   },

@@ -20,6 +20,6 @@ export const GlowOverlay = styled.div`
   background: radial-gradient(
     circle,
     rgba(0, 112, 243, 0.15) 0%,
-    transparent 60%
+    transparent 50%
   );
 `

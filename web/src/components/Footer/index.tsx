@@ -11,7 +11,7 @@ const Footer = () => {
       <S.FooterWrapper>
         <S.FooterLeft>
           <S.FooterName>Henrique Garcia © {year}</S.FooterName>
-          <S.FooterNote>Feito com código, café e propósito.</S.FooterNote>
+          {/* <S.FooterNote>Feito com código, café e propósito.</S.FooterNote> */}
         </S.FooterLeft>
 
         <S.FooterRight>

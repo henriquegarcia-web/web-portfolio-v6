@@ -64,6 +64,8 @@ export const ProjectsSectionContent = styled.div`
 `
 
 export const ProjectCard = styled.div`
+  z-index: 10;
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -157,6 +159,8 @@ export const ExperienceSectionContent = styled.div`
 `
 
 export const ExperienceCard = styled.div`
+  z-index: 10;
+  position: relative;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -257,11 +261,13 @@ export const TecsGrid = styled.div`
 `
 
 export const TechCard = styled.div`
+  z-index: 10;
+  position: relative; 
   display: flex;
   align-items: center;
-  width: calc(33% - 12.5px);
+  width: 100%;
   gap: 16px;
-  padding: 14px 16px;
+  padding: 14px 18px;
   border-radius: 8px;
   transition: all 0.2s ease;
 
