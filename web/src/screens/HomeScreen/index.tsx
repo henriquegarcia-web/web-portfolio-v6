@@ -11,9 +11,11 @@ import {
   UserCard,
   Input,
   TextArea,
-  Button
+  Button,
+  GlowCard
 } from '@/components'
 import { portfolioContent } from '@/constants/content'
+import { Fade } from 'react-awesome-reveal'
 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -30,10 +32,18 @@ const HomeScreen = ({}: IHomeScreen) => {
         </S.HomeLeft>
         <S.HomeRight>
           <HeroSection />
-          <ProjectsSection />
-          <ExperienceSection />
-          <TecsSection />
-          <AboutMeSection />
+          <Fade triggerOnce>
+            <ProjectsSection />
+          </Fade>
+          <Fade triggerOnce>
+            <ExperienceSection />
+          </Fade>
+          <Fade triggerOnce>
+            <TecsSection />
+          </Fade>
+          <Fade triggerOnce>
+            <AboutMeSection />
+          </Fade>
         </S.HomeRight>
       </S.HomeWrapper>
       <ContactMeSection />
@@ -119,28 +129,30 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   }, [hovered, images.length])
 
   return (
-    <S.ProjectCard
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <S.ProjectCardImage>
-        <S.ProjectImageSlider $currentIndex={currentIndex}>
-          {images.map((img: string, i: string) => (
-            <S.ProjectImageSlide key={i} src={img} alt={`${title}-${i}`} />
-          ))}
-        </S.ProjectImageSlider>
-      </S.ProjectCardImage>
+    <GlowCard>
+      <S.ProjectCard
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <S.ProjectCardImage>
+          <S.ProjectImageSlider $currentIndex={currentIndex}>
+            {images.map((img: string, i: string) => (
+              <S.ProjectImageSlide key={i} src={img} alt={`${title}-${i}`} />
+            ))}
+          </S.ProjectImageSlider>
+        </S.ProjectCardImage>
 
-      <S.ProjectCardContent>
-        <S.ProjectCardTitle>{title}</S.ProjectCardTitle>
-        <S.ProjectCardDescription>{description}</S.ProjectCardDescription>
-        <S.ProjectCardTechStack>
-          {techStack.map((tech: string) => (
-            <span key={tech}>{tech}</span>
-          ))}
-        </S.ProjectCardTechStack>
-      </S.ProjectCardContent>
-    </S.ProjectCard>
+        <S.ProjectCardContent>
+          <S.ProjectCardTitle>{title}</S.ProjectCardTitle>
+          <S.ProjectCardDescription>{description}</S.ProjectCardDescription>
+          <S.ProjectCardTechStack>
+            {techStack.map((tech: string) => (
+              <span key={tech}>{tech}</span>
+            ))}
+          </S.ProjectCardTechStack>
+        </S.ProjectCardContent>
+      </S.ProjectCard>
+    </GlowCard>
   )
 }
 
@@ -178,25 +190,29 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   } = experience
 
   return (
-    <S.ExperienceCard>
-      <S.ExperienceCardImage>
-        <img src={image} alt={`Logo da empresa ${company}`} />
-      </S.ExperienceCardImage>
+    <GlowCard>
+      <S.ExperienceCard>
+        <S.ExperienceCardImage>
+          <img src={image} alt={`Logo da empresa ${company}`} />
+        </S.ExperienceCardImage>
 
-      <S.ExperienceCardContent>
-        <S.ExperienceCardHeader>
-          <S.ExperienceCardCompany>{company}</S.ExperienceCardCompany>
-          <S.ExperienceCardPeriod>{period}</S.ExperienceCardPeriod>
-        </S.ExperienceCardHeader>
-        <S.ExperienceCardRole>{role}</S.ExperienceCardRole>
-        <S.ExperienceCardDescription>{description}</S.ExperienceCardDescription>
-        <S.ExperienceCardTechStack>
-          {techStack.map((tech: string) => (
-            <span key={tech}>{tech}</span>
-          ))}
-        </S.ExperienceCardTechStack>
-      </S.ExperienceCardContent>
-    </S.ExperienceCard>
+        <S.ExperienceCardContent>
+          <S.ExperienceCardHeader>
+            <S.ExperienceCardCompany>{company}</S.ExperienceCardCompany>
+            <S.ExperienceCardPeriod>{period}</S.ExperienceCardPeriod>
+          </S.ExperienceCardHeader>
+          <S.ExperienceCardRole>{role}</S.ExperienceCardRole>
+          <S.ExperienceCardDescription>
+            {description}
+          </S.ExperienceCardDescription>
+          <S.ExperienceCardTechStack>
+            {techStack.map((tech: string) => (
+              <span key={tech}>{tech}</span>
+            ))}
+          </S.ExperienceCardTechStack>
+        </S.ExperienceCardContent>
+      </S.ExperienceCard>
+    </GlowCard>
   )
 }
 
@@ -213,7 +229,9 @@ const TecsSection = ({}: ITecsSection) => {
 
       <S.TecsGrid>
         {items.map((tech) => (
-          <TechCard key={tech.name + tech.logo.length} tech={tech} />
+          <GlowCard key={tech.name + tech.logo.length}>
+            <TechCard tech={tech} />
+          </GlowCard>
         ))}
       </S.TecsGrid>
     </S.TecsSection>

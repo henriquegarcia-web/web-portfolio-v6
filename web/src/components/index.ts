@@ -9,6 +9,8 @@ import UserCard from './UserCard'
 import AttributeCounter from './AttributeCounter'
 import SocialMedia from './SocialMedia'
 
+import GlowCard from './GlowCard'
+
 import Button from './inputs/Button'
 import Input from './inputs/Input'
 import TextArea from './inputs/TextArea'
@@ -24,5 +26,6 @@ export {
   SocialMedia,
   Button,
   Input,
-  TextArea
+  TextArea,
+  GlowCard
 }

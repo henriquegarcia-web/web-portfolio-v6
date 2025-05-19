@@ -171,7 +171,7 @@ export const portfolioContent: PortfolioContent = {
     subtitle: 'Profissional',
     items: [
       {
-        image: '/projects/hungryhub_01.png',
+        image: '/companies/gp_logo.png',
         company: 'Grupo Pereira',
         role: 'Desenvolvedor Front-End Pleno',
         period: '2022 - 2023',
@@ -180,7 +180,7 @@ export const portfolioContent: PortfolioContent = {
         techStack: ['Next.js', 'React', 'Stripe', 'Firebase', 'Tailwind CSS']
       },
       {
-        image: '/projects/hungryhub_01.png',
+        image: '/companies/moovin_logo.jpeg',
         company: 'Moovin',
         role: 'Desenvolvedor Front-End',
         period: '2021',
@@ -189,7 +189,7 @@ export const portfolioContent: PortfolioContent = {
         techStack: ['Next.js', 'React', 'Stripe', 'Firebase', 'Tailwind CSS']
       },
       {
-        image: '/projects/hungryhub_01.png',
+        image: '/companies/freelancer_logo.jpg',
         company: 'Freelancer',
         role: 'Desenvolvedor Full-Stack',
         period: '2018 - atual',

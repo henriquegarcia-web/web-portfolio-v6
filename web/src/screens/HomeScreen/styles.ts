@@ -69,15 +69,10 @@ export const ProjectCard = styled.div`
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 
   border: 1px solid;
   ${borderColor('borderSecondary')};
-  ${backgroundColor('bgBase')};
-
-  &:hover {
-    ${backgroundColor('bgElevated')};
-  }
 `
 
 export const ProjectCardImage = styled.div`
@@ -115,7 +110,7 @@ export const ProjectCardContent = styled.div`
 `
 
 export const ProjectCardTitle = styled.h3`
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 
   ${fontSize('xl')};
   ${fontHeight('xl')};
@@ -167,15 +162,10 @@ export const ExperienceCard = styled.div`
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 
   border: 1px solid;
   ${borderColor('borderSecondary')};
-  ${backgroundColor('bgBase')};
-
-  &:hover {
-    ${backgroundColor('bgElevated')};
-  }
 `
 
 export const ExperienceCardImage = styled.div`
@@ -273,15 +263,12 @@ export const TechCard = styled.div`
   gap: 16px;
   padding: 14px 16px;
   border-radius: 8px;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
 
   border: 1px solid;
   ${borderColor('borderSecondary')};
-  ${backgroundColor('bgBase')};
 
   &:hover {
-    ${backgroundColor('bgElevated')};
-
     span {
       ${color('primary')};
     }
