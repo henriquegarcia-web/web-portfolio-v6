@@ -1,26 +1,26 @@
-// src/components/GlowCard.tsx
+// src/components/GlowBackdrop.tsx
 
 import { useRef, useState } from 'react'
 import { useMousePosition } from '@/hooks/useMousePosition'
 import * as S from './styles'
 
-const GlowCard = ({ children }: { children: React.ReactNode }) => {
-  const cardRef = useRef<HTMLDivElement>(null)
+const GlowBackdrop = ({ children }: { children: React.ReactNode }) => {
+  const backgroundRef = useRef<HTMLDivElement>(null)
   const [coords, setCoords] = useState({ x: 0, y: 0 })
   const [hovered, setHovered] = useState(false)
 
-  useMousePosition(cardRef, setCoords)
+  useMousePosition(backgroundRef, setCoords)
 
   return (
-    <S.GlowCard
-      ref={cardRef}
+    <S.GlowBackdrop
+      ref={backgroundRef}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {hovered && <S.GlowOverlay style={{ left: coords.x, top: coords.y }} />}
       {children}
-    </S.GlowCard>
+    </S.GlowBackdrop>
   )
 }
 
-export default GlowCard
+export default GlowBackdrop

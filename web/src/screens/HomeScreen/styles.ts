@@ -8,6 +8,8 @@ import { fontHeight, fontSize, fontWeight } from '@/utils/styles/fonts'
 import { backgroundColor, borderColor, color } from '@/utils/styles/colors'
 
 export const HomeScreen = styled.main`
+  z-index: 10;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,8 +66,6 @@ export const ProjectsSectionContent = styled.div`
 `
 
 export const ProjectCard = styled.div`
-  z-index: 10;
-  position: relative;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -75,6 +75,10 @@ export const ProjectCard = styled.div`
 
   border: 1px solid;
   ${borderColor('borderSecondary')};
+
+  &:hover {
+    ${backgroundColor('bgElevated')};
+  }
 `
 
 export const ProjectCardImage = styled.div`
@@ -159,8 +163,6 @@ export const ExperienceSectionContent = styled.div`
 `
 
 export const ExperienceCard = styled.div`
-  z-index: 10;
-  position: relative;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -170,6 +172,10 @@ export const ExperienceCard = styled.div`
 
   border: 1px solid;
   ${borderColor('borderSecondary')};
+
+  &:hover {
+    ${backgroundColor('bgElevated')};
+  }
 `
 
 export const ExperienceCardImage = styled.div`
@@ -255,17 +261,19 @@ export const TecsSection = styled.div`
 `
 
 export const TecsGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const TechCard = styled.div`
-  z-index: 10;
-  position: relative; 
   display: flex;
   align-items: center;
-  width: 100%;
+  width: calc();
   gap: 16px;
   padding: 14px 18px;
   border-radius: 8px;
@@ -278,6 +286,8 @@ export const TechCard = styled.div`
     span {
       ${color('primary')};
     }
+
+    ${backgroundColor('bgElevated')};
   }
 `
 

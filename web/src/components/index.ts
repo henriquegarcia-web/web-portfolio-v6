@@ -10,7 +10,8 @@ import AttributeCounter from './AttributeCounter'
 import SocialMedia from './SocialMedia'
 import TechIcon from './TechIcon'
 
-import GlowCard from './GlowCard'
+import GlowBackdrop from './GlowBackdrop'
+import CustomCursor from './CustomCursor'
 
 import Button from './inputs/Button'
 import Input from './inputs/Input'
@@ -28,6 +29,7 @@ export {
   Button,
   Input,
   TextArea,
-  GlowCard,
-  TechIcon
+  GlowBackdrop,
+  TechIcon,
+  CustomCursor
 }

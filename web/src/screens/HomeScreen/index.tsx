@@ -12,7 +12,6 @@ import {
   Input,
   TextArea,
   Button,
-  GlowCard,
   TechIcon
 } from '@/components'
 import { portfolioContent } from '@/constants/content'
@@ -130,30 +129,28 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   }, [hovered, images.length])
 
   return (
-    <GlowCard>
-      <S.ProjectCard
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        <S.ProjectCardImage>
-          <S.ProjectImageSlider $currentIndex={currentIndex}>
-            {images.map((img: string, i: string) => (
-              <S.ProjectImageSlide key={i} src={img} alt={`${title}-${i}`} />
-            ))}
-          </S.ProjectImageSlider>
-        </S.ProjectCardImage>
+    <S.ProjectCard
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <S.ProjectCardImage>
+        <S.ProjectImageSlider $currentIndex={currentIndex}>
+          {images.map((img: string, i: string) => (
+            <S.ProjectImageSlide key={i} src={img} alt={`${title}-${i}`} />
+          ))}
+        </S.ProjectImageSlider>
+      </S.ProjectCardImage>
 
-        <S.ProjectCardContent>
-          <S.ProjectCardTitle>{title}</S.ProjectCardTitle>
-          <S.ProjectCardDescription>{description}</S.ProjectCardDescription>
-          <S.ProjectCardTechStack>
-            {techStack.map((tech: string) => (
-              <span key={tech}>{tech}</span>
-            ))}
-          </S.ProjectCardTechStack>
-        </S.ProjectCardContent>
-      </S.ProjectCard>
-    </GlowCard>
+      <S.ProjectCardContent>
+        <S.ProjectCardTitle>{title}</S.ProjectCardTitle>
+        <S.ProjectCardDescription>{description}</S.ProjectCardDescription>
+        <S.ProjectCardTechStack>
+          {techStack.map((tech: string) => (
+            <span key={tech}>{tech}</span>
+          ))}
+        </S.ProjectCardTechStack>
+      </S.ProjectCardContent>
+    </S.ProjectCard>
   )
 }
 
@@ -191,29 +188,25 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   } = experience
 
   return (
-    <GlowCard>
-      <S.ExperienceCard>
-        <S.ExperienceCardImage>
-          <img src={image} alt={`Logo da empresa ${company}`} />
-        </S.ExperienceCardImage>
+    <S.ExperienceCard>
+      <S.ExperienceCardImage>
+        <img src={image} alt={`Logo da empresa ${company}`} />
+      </S.ExperienceCardImage>
 
-        <S.ExperienceCardContent>
-          <S.ExperienceCardHeader>
-            <S.ExperienceCardCompany>{company}</S.ExperienceCardCompany>
-            <S.ExperienceCardPeriod>{period}</S.ExperienceCardPeriod>
-          </S.ExperienceCardHeader>
-          <S.ExperienceCardRole>{role}</S.ExperienceCardRole>
-          <S.ExperienceCardDescription>
-            {description}
-          </S.ExperienceCardDescription>
-          <S.ExperienceCardTechStack>
-            {techStack.map((tech: string) => (
-              <span key={tech}>{tech}</span>
-            ))}
-          </S.ExperienceCardTechStack>
-        </S.ExperienceCardContent>
-      </S.ExperienceCard>
-    </GlowCard>
+      <S.ExperienceCardContent>
+        <S.ExperienceCardHeader>
+          <S.ExperienceCardCompany>{company}</S.ExperienceCardCompany>
+          <S.ExperienceCardPeriod>{period}</S.ExperienceCardPeriod>
+        </S.ExperienceCardHeader>
+        <S.ExperienceCardRole>{role}</S.ExperienceCardRole>
+        <S.ExperienceCardDescription>{description}</S.ExperienceCardDescription>
+        <S.ExperienceCardTechStack>
+          {techStack.map((tech: string) => (
+            <span key={tech}>{tech}</span>
+          ))}
+        </S.ExperienceCardTechStack>
+      </S.ExperienceCardContent>
+    </S.ExperienceCard>
   )
 }
 
@@ -230,9 +223,7 @@ const TecsSection = ({}: ITecsSection) => {
 
       <S.TecsGrid>
         {items.map((tech) => (
-          <GlowCard key={tech.name + tech.logo.length}>
-            <TechCard tech={tech} />
-          </GlowCard>
+          <TechCard key={tech.name + tech.logo.length} tech={tech} />
         ))}
       </S.TecsGrid>
     </S.TecsSection>
