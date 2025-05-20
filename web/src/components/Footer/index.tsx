@@ -10,7 +10,9 @@ const Footer = () => {
     <S.Footer>
       <S.FooterWrapper>
         <S.FooterLeft>
-          <S.FooterName>Henrique Garcia © {year}</S.FooterName>
+          <S.FooterName>
+            Henrique Garcia <b>© {year}</b>
+          </S.FooterName>
           {/* <S.FooterNote>Feito com código, café e propósito.</S.FooterNote> */}
         </S.FooterLeft>
 

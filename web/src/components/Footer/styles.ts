@@ -34,15 +34,20 @@ export const FooterLeft = styled.div`
 `
 
 export const FooterName = styled.span`
-  ${fontSize('regular')};
-  ${fontWeight('bold')};
+  ${fontSize('small')};
+  ${fontWeight('regular')};
+
   ${color('textHeading')};
+
+  b {
+    ${fontWeight('bold')};
+  }
 `
 
-export const FooterNote = styled.span`
-  ${fontSize('small')};
-  ${color('textDescription')};
-`
+// export const FooterNote = styled.span`
+//   ${fontSize('small')};
+//   ${color('textDescription')};
+// `
 
 export const FooterRight = styled.div`
   display: flex;
@@ -62,7 +67,7 @@ export const FooterIcon = styled.a`
   transition: all 0.2s;
 
   ${color('text')};
-  ${fontSize('xl')};
+  ${fontSize('large')};
 
   &:hover {
     opacity: 1;

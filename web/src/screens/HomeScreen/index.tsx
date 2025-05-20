@@ -32,21 +32,23 @@ const HomeScreen = ({}: IHomeScreen) => {
         </S.HomeLeft>
         <S.HomeRight>
           <HeroSection />
-          <Fade triggerOnce>
+          <Fade triggerOnce delay={500}>
             <ProjectsSection />
           </Fade>
-          <Fade triggerOnce>
+          <Fade triggerOnce delay={500}>
             <ExperienceSection />
           </Fade>
-          <Fade triggerOnce>
+          <Fade triggerOnce delay={500}>
             <TecsSection />
           </Fade>
-          <Fade triggerOnce>
+          <Fade triggerOnce delay={500}>
             <AboutMeSection />
           </Fade>
         </S.HomeRight>
       </S.HomeWrapper>
-      <ContactMeSection />
+      <Fade triggerOnce delay={500}>
+        <ContactMeSection />
+      </Fade>
     </S.HomeScreen>
   )
 }
