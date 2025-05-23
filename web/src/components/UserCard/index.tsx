@@ -1,4 +1,4 @@
-import { portfolioContent } from '@/constants/content'
+import { MediasType, portfolioContent } from '@/constants/content'
 import * as S from './styles'
 
 import { Button, SocialMedia } from '@/components'
@@ -19,12 +19,12 @@ const UserCard = ({}: IUserCard) => {
         <p>{portfolioContent.hero.role}</p>
       </S.UserInfo>
       <S.UserContact>
-        {portfolioContent.hero.medias.map((media) => (
+        {portfolioContent.hero.medias.map((media: MediasType) => (
           <SocialMedia key={media} variant="icon" media={media} />
         ))}
       </S.UserContact>
       <S.UserCta>
-        <Button label={portfolioContent.hero.cta} onClick={() => {}} />
+        <Button label={portfolioContent.hero.userCta} onClick={() => {}} />
       </S.UserCta>
     </S.UserCard>
   )

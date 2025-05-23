@@ -41,14 +41,22 @@ export const HomeRight = styled.div`
 export const HeroSection = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   row-gap: 40px;
+  height: calc(100vh - ${Globals.layout.header.height} * 2);
 `
 
 export const HeroSectionAttributes = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 30px;
+  margin: 20px 0 35px 0;
+`
+
+export const HeroSectionCtas = styled.div`
+  display: flex;
+  column-gap: 20px;
+  width: 100%;
 `
 
 // ==================================== PROJECTS SECTION
@@ -344,9 +352,14 @@ export const ContactMeSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   row-gap: 40px;
   width: 100%;
-  padding: 60px 0 20px 0;
+  padding-bottom: 40px;
+
+  height: calc(
+    100vh - ${Globals.layout.header.height} - ${Globals.layout.footer.height}
+  );
 `
 
 export const ContactMeSectionContent = styled.form`

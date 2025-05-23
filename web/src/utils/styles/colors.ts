@@ -9,6 +9,10 @@ export const Colors = {
   tertiary: '#facc15',
   contrast: '#38bdf8',
 
+  // Hover
+  primaryHover: '#1466d9',
+  tertiaryHover: '#d9b211',
+
   success: '#52c41a',
   warning: '#faad14',
   error: '#ff4d4f',

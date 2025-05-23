@@ -18,6 +18,7 @@ interface FontSizes {
   xl: FontStyle
   xxl: FontStyle
   xxxl: FontStyle
+  xxxxl: FontStyle
   sx: FontStyle
   attributeCounter: FontStyle
   heroTitle: FontStyle
@@ -79,6 +80,10 @@ export const Fonts: FontSizes = {
   xxxl: {
     size: '2rem', // 32px
     height: '2rem' // 32px
+  },
+  xxxxl: {
+    size: '2.5rem', // 40px
+    height: '2.5rem' // 40px
   },
   sx: {
     size: '6.25rem', // 100px

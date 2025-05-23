@@ -12,7 +12,8 @@ import {
   Input,
   TextArea,
   Button,
-  TechIcon
+  TechIcon,
+  CtaCard
 } from '@/components'
 import { portfolioContent } from '@/constants/content'
 import { Fade } from 'react-awesome-reveal'
@@ -82,6 +83,11 @@ const HeroSection = ({}: IHeroSection) => {
           attribute={portfolioContent.hero.metrics.technologies.label}
         />
       </S.HeroSectionAttributes>
+      <S.HeroSectionCtas>
+        {portfolioContent.hero.ctas.map((cta) => (
+          <CtaCard key={cta.label} cta={cta} />
+        ))}
+      </S.HeroSectionCtas>
     </S.HeroSection>
   )
 }
@@ -121,7 +127,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     if (hovered) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % images.length)
-      }, 3000)
+      }, 1500)
     } else {
       clearInterval(intervalRef.current!)
       setCurrentIndex(0)

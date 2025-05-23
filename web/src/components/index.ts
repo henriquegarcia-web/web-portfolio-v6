@@ -12,6 +12,7 @@ import TechIcon from './TechIcon'
 
 import GlowBackdrop from './GlowBackdrop'
 import CustomCursor from './CustomCursor'
+import CtaCard from './CtaCard'
 
 import Button from './inputs/Button'
 import Input from './inputs/Input'
@@ -31,5 +32,6 @@ export {
   TextArea,
   GlowBackdrop,
   TechIcon,
-  CustomCursor
+  CustomCursor,
+  CtaCard
 }

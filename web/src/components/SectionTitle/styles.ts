@@ -10,6 +10,7 @@ export const SectionTitle = styled.div<{ ishero?: number; centered?: number }>`
 
   h1 {
     text-transform: uppercase;
+    white-space: nowrap;
 
     ${({ ishero }) =>
       ishero ? fontSize('heroTitle') : fontSize('sectionTitle')}
@@ -23,6 +24,7 @@ export const SectionTitle = styled.div<{ ishero?: number; centered?: number }>`
   h2 {
     margin-top: ${({ ishero }) => (ishero ? '0px' : '-12px')};
     text-transform: uppercase;
+    white-space: nowrap;
 
     ${({ ishero }) =>
       ishero ? fontSize('heroLegend') : fontSize('sectionLegend')}

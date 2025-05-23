@@ -1,16 +1,24 @@
 import { ReactNode } from 'react'
 
-export interface PortfolioContent {
-  hero: HeroSection
-  projects: ProjectSection
-  experience: ExperienceSection
-  technologies: TechnologySection
-  learning: LearningSection
-  aboutMe: AboutMeSection
-  contactMe: ContactMeSection
+import { FaFolderOpen, FaCode } from 'react-icons/fa6'
+
+export interface IPortfolioContent {
+  user: IUserInfos
+  hero: IHeroSection
+  projects: IProjectSection
+  experience: IExperienceSection
+  technologies: ITechnologySection
+  learning: ILearningSection
+  aboutMe: IAboutMeSection
+  contactMe: IContactMeSection
 }
 
-export interface HeroSection {
+export interface IUserInfos {
+  name: string
+  role: string
+}
+
+export interface IHeroSection {
   title: string
   subtitle: string
   legend: string
@@ -20,27 +28,35 @@ export interface HeroSection {
   }
   name: string
   role: string
-  medias: string[]
-  cta: string
+  medias: MediasType[]
+  userCta: string
+  ctas: ICta[]
   metrics: {
-    experience: Metric
-    projects: Metric
-    technologies: Metric
+    experience: IMetric
+    projects: IMetric
+    technologies: IMetric
   }
 }
 
-export interface Metric {
+export interface ICta {
+  label: string
+  url: string
+  variant: CtaVariantType
+  icon: ReactNode
+}
+
+export interface IMetric {
   label: string
   value: number
 }
 
-export interface ProjectSection {
+export interface IProjectSection {
   title: string
   subtitle: string
-  items: ProjectItem[]
+  items: IProjectItem[]
 }
 
-export interface ProjectItem {
+export interface IProjectItem {
   images: string[]
   title: string
   description: string
@@ -48,13 +64,13 @@ export interface ProjectItem {
   techStack: string[]
 }
 
-export interface ExperienceSection {
+export interface IExperienceSection {
   title: string
   subtitle: string
-  items: ExperienceItem[]
+  items: IExperienceItem[]
 }
 
-export interface ExperienceItem {
+export interface IExperienceItem {
   image: string
   company: string
   role: string
@@ -63,34 +79,48 @@ export interface ExperienceItem {
   techStack: string[]
 }
 
-export interface TechnologySection {
+export interface ITechnologySection {
   title: string
   subtitle: string
-  items: TechnologyItem[]
+  items: ITechnologyItem[]
 }
 
-export interface TechnologyItem {
+export interface ITechnologyItem {
   name: string
   logo: string
 }
 
-export interface LearningSection {
+export interface ILearningSection {
   title: string
   subtitle: string
 }
 
-export interface AboutMeSection {
+export interface IAboutMeSection {
   title: string
   subtitle: string
   content: ReactNode
 }
 
-export interface ContactMeSection {
+export interface IContactMeSection {
   title: string
   subtitle: string
 }
 
-export const portfolioContent: PortfolioContent = {
+export type MediasType =
+  | 'facebook'
+  | 'github'
+  | 'instagram'
+  | 'linkedin'
+  | 'threads'
+
+export type CtaVariantType = 'primary' | 'secondary'
+
+export const portfolioContent: IPortfolioContent = {
+  user: {
+    name: 'Henrique Garcia',
+    role: 'Desenvolvedor Full-Stack'
+  },
+
   hero: {
     title: 'Full-Stack',
     subtitle: 'Desenvolvedor',
@@ -103,7 +133,21 @@ export const portfolioContent: PortfolioContent = {
     name: 'Henrique Garcia',
     role: 'Desenvolvedor full-stack com foco em front-end',
     medias: ['github', 'linkedin', 'threads'],
-    cta: 'Vamos conversar',
+    userCta: 'Baixar meu currículo',
+    ctas: [
+      {
+        label: 'Conheça meus trabalhos e projetos',
+        url: '/portfolio',
+        variant: 'primary',
+        icon: <FaFolderOpen />
+      },
+      {
+        label: 'Confira minha stack completa',
+        url: '/stack',
+        variant: 'secondary',
+        icon: <FaCode />
+      }
+    ],
     metrics: {
       experience: {
         label: 'Anos de experiência',

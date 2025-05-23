@@ -15,6 +15,7 @@ export const UserCard = styled.div`
   height: fit-content;
   padding: 20px;
   border-radius: 14px;
+  margin-top: 50%;
 
   ${backgroundColor('bgContainer')}
 `

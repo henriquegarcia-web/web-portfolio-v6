@@ -11,7 +11,10 @@ export const Globals = {
   layout: {
     padding: '20px',
     header: {
-      height: '80px'
+      height: '100px'
+    },
+    footer: {
+      height: '60px'
     },
     hero: {
       card: {

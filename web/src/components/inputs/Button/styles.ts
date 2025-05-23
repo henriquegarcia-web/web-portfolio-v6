@@ -4,26 +4,6 @@ import { ButtonVariant } from '.'
 import { fontHeight, fontSize, fontWeight } from '@/utils/styles/fonts'
 import { backgroundColor, color } from '@/utils/styles/colors'
 
-// export const Button = styled.button<{ variant: ButtonVariant }>`
-// display: flex;
-// justify-content: center;
-// align-items: center;
-// width: 100%;
-//   height: fit-content;
-//   padding: 15px 10px;
-//   border-radius: 8px;
-//   cursor: pointer;
-
-// ${fontSize('regular')}
-// ${fontHeight('regular')}
-// ${fontWeight('medium')}
-
-// ${color('textButton')}
-// ${backgroundColor('primary')}
-// `
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
-
 export const Button = styled.button<{ variant: ButtonVariant }>`
   display: flex;
   justify-content: center;
@@ -32,8 +12,7 @@ export const Button = styled.button<{ variant: ButtonVariant }>`
   padding: 20px 25px;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
-  opacity: 0.85;
+  transition: all 0.2s ease;
 
   ${fontSize('regular')}
   ${fontHeight('regular')}
@@ -46,7 +25,7 @@ export const Button = styled.button<{ variant: ButtonVariant }>`
   ${backgroundColor('primary')}
 
   &:hover {
-    opacity: 1;
+    ${backgroundColor('primaryHover')}
   }
 
   &:disabled {

@@ -7,9 +7,11 @@ import {
   FaThreads
 } from 'react-icons/fa6'
 
+import { MediasType } from '@/constants/content'
+
 interface ISocialMedia {
   variant: 'icon'
-  media: 'facebook' | 'github' | 'instagram' | 'linkedin' | 'threads'
+  media: MediasType
 }
 
 const SocialMedia = ({ variant, media }: ISocialMedia) => {

@@ -11,8 +11,7 @@ export const Footer = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 ${Globals.layout.padding};
-  margin-top: 120px;
+  height: ${Globals.layout.footer.height};
 
   border-top: 1px solid;
   ${borderColor('borderSecondary')};

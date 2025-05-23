@@ -3,6 +3,8 @@
 import * as S from './styles'
 import { FaGithub, FaLinkedin, FaThreads } from 'react-icons/fa6'
 
+import { portfolioContent } from '@/constants/content'
+
 const Footer = () => {
   const year = new Date().getFullYear()
 
@@ -11,7 +13,7 @@ const Footer = () => {
       <S.FooterWrapper>
         <S.FooterLeft>
           <S.FooterName>
-            Henrique Garcia <b>© {year}</b>
+            {portfolioContent.hero.userCta} <b>© {year}</b>
           </S.FooterName>
           {/* <S.FooterNote>Feito com código, café e propósito.</S.FooterNote> */}
         </S.FooterLeft>
